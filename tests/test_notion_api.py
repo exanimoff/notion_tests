@@ -2,9 +2,9 @@ import pytest
 import requests
 from notion_api import get_database, create_database
 
-parent_page_id = "5259b8ada2fa41dfa063aed4115d01c5"
-PAGE_ID = "04c4ad5eef734176a663efa635dd20b7"
-DATABASE_ID = "04c4ad5eef734176a663efa635dd20b7"
+parent_page_id = "9a6a7be7edd349f588c9f066965d731c"
+PAGE_ID = "c860cb8ca7bf4e7eaba9d22fb9c61a57"
+DATABASE_ID = "c860cb8ca7bf4e7eaba9d22fb9c61a57"
 title = "Example Database"
 PROPERTIES = {
         "Name": {
@@ -21,7 +21,7 @@ PROPERTIES = {
     }
 
 def test_get_database():
-    response = get_database(PAGE_ID)
+    response = get_database(DATABASE_ID)
     # assert response['object'] == 'page'
     # assert 'properties' in response
 
