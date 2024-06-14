@@ -1,9 +1,9 @@
 import pytest
 import requests
-from notion_api import get_page
+from notion_api import get_database
 
-PAGE_ID = "5259b8ada2fa41dfa063aed4115d01c5"
-# DATABASE_ID = "your_database_id_here"
+PAGE_ID = "04c4ad5eef734176a663efa635dd20b7"
+DATABASE_ID = "04c4ad5eef734176a663efa635dd20b7"
 PROPERTIES = {
     "Name": {
         "title": [
@@ -16,8 +16,8 @@ PROPERTIES = {
     }
 }
 
-def test_get_page():
-    response = get_page(PAGE_ID)
+def test_get_database():
+    response = get_database(PAGE_ID)
     # assert response['object'] == 'page'
     # assert 'properties' in response
 

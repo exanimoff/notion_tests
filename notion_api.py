@@ -7,8 +7,8 @@ headers = {
     "Content-Type": "application/json"
 }
 
-def get_page(page_id):
-    url = f"{NOTION_API_BASE_URL}/v1/pages/{page_id}"
+def get_database(page_id):
+    url = f"{NOTION_API_BASE_URL}/v1/databases/{page_id}"
     print(f"GET {url}")
     response = requests.get(url, headers=headers)
     print(f"Response status: {response.status_code}")
