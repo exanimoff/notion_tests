@@ -16,16 +16,17 @@ def get_database(page_id):
     response.raise_for_status()
     return response.json()
 
-# def create_page(parent_id, properties):
-#     url = f"{NOTION_API_BASE_URL}/pages"
-#     data = {
-#         "parent": {"database_id": parent_id},
-#         "properties": properties
-#     }
-#     print(f"POST {url}")
-#     print(f"Request data: {data}")
-#     response = requests.post(url, headers=headers, json=data)
-#     print(f"Response status: {response.status_code}")
-#     print(f"Response content: {response.content}")
-#     response.raise_for_status()
-#     return response.json()
+def create_database(parent_page_id, title, properties):
+    url = f"{NOTION_API_BASE_URL}/v1/databases"
+    data = {
+        "parent": {"type": "page_id", "page_id": parent_page_id},
+        "title": [{"type": "text", "text": {"content": title}}],
+        "properties": properties
+    }
+    print(f"POST {url}")
+    print(f"Request data: {data}")
+    response = requests.post(url, headers=headers, json=data)
+    print(f"Response status: {response.status_code}")
+    print(f"Response content: {response.content}")
+    response.raise_for_status()
+    return response.json()
